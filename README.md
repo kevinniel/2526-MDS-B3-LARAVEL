@@ -60,3 +60,15 @@ Tout devrait refonctionner par la suite, et vous devriez avoir :
 ```
 npx concurrently \"php artisan serve\" \"php artisan queue:listen --tries=1 --timeout=0\" \"npm run dev\" --names=server,queue,logs,vite --kill-others"
 ```
+
+## Mise en place de l'authentification
+
+```
+composer require laravel/breeze --dev
+php artisan breeze:install
+php artisan migrate
+npm install
+composer run dev
+```
+
+Si vous avez une erreur, rendez-vous dans le fichier `/resources/js/app.js` et supprimez la ligne `import './bootstrap';`
