@@ -65,7 +65,7 @@ Champs minimum conseilles :
 - `city`
 - `country`
 - `description`
-- `upvotes_count`
+- `upvotes_count` (valeur par défaut : 0)
 
 ### Relations
 
