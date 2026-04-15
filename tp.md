@@ -209,18 +209,18 @@ Creer une commande Artisan personnalisee executee une fois par jour.
 
 Cas impose :
 
-- nettoyer la table `failed_jobs`.
+- supprimer automatiquement certaines `locations`.
 
-Exemple de regle :
+Regle imposee :
 
-- supprimer les echecs de jobs de plus de 30 jours.
+- supprimer les emplacements crees depuis plus de 14 jours et qui ont moins de 2 upvotes.
 
 Attendus :
 
 - une commande Artisan personnalisee ;
 - l'enregistrement de cette commande dans le scheduler Laravel ;
 - une explication simple pour montrer comment tester la commande manuellement ;
-- si necessaire, la mise en place de la table `failed_jobs`.
+- une implementation claire de la condition metier utilisee pour selectionner les emplacements a supprimer.
 
 ---
 
@@ -271,6 +271,7 @@ Mettre en place un abonnement payant tres simple pour les utilisateurs.
 But :
 
 - seuls les utilisateurs abonnes peuvent appeler une route API qui retourne en JSON tous les emplacements d'un film donne.
+- l'authentification de cette partie API doit se faire avec un token JWT.
 
 Route attendue, par exemple :
 
@@ -287,12 +288,17 @@ Le JSON doit au minimum contenir :
 Contraintes :
 
 - un utilisateur non abonne ne doit pas pouvoir utiliser cette route ;
+- un utilisateur sans token JWT valide ne doit pas pouvoir utiliser cette route ;
+- l'acces a cette route doit donc verifier a la fois l'authentification JWT et l'abonnement actif ;
 - une verification claire de l'abonnement doit etre mise en place ;
+- Stripe doit etre reellement fonctionnel en mode test ;
+- vous devez etre capables de demonstrer un paiement ou un abonnement de test avec une carte de test Stripe, par exemple `4242 4242 4242 4242` ;
 - une page tres simple de souscription suffit.
 
 Remarque :
 
 - vous pouvez rester minimalistes sur l'interface Stripe ;
+- l'objectif n'est pas de faire une interface de paiement complete, mais de valider un flux Stripe de test fonctionnel ;
 - l'important est le fonctionnement, pas le design.
 
 ---
@@ -355,6 +361,7 @@ Votre rendu doit contenir :
   - tester la commande planifiee ;
   - configurer le login social ;
   - configurer Stripe ;
+  - generer et utiliser un token JWT pour l'API ;
   - lancer le MCP.
 
 ---
