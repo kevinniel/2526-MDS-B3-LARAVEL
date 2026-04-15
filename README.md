@@ -39,3 +39,24 @@ php artisan key:generate
 ```
 composer run dev
 ```
+
+En cas de bug avec Composer, RDV dans votre fichier `composer.json` et modifiez la ligne : 
+
+```
+npx concurrently
+    -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\"
+    \"php artisan serve\"
+    \"php artisan queue:listen --tries=1 --timeout=0\"
+    \"php artisan pail --timeout=0\"
+    \"npm run dev\" --names=server,queue,logs,vite --kill-others"
+```
+
+Si vous avez une erreur "pail", supprimez la partie `\"php artisan pail --timeout=0\"`
+
+Vous pouvez aussi virer la partie `-c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\"`.
+
+Tout devrait refonctionner par la suite, et vous devriez avoir : 
+
+```
+npx concurrently \"php artisan serve\" \"php artisan queue:listen --tries=1 --timeout=0\" \"npm run dev\" --names=server,queue,logs,vite --kill-others"
+```
