@@ -39,7 +39,7 @@ A la fin du TP, vous devez avoir pratique :
 
 ## Sujet
 
-Vous allez realiser une application nommee par exemple `CineMap`, `FilmSpot` ou `MovieLocations`.
+Vous allez realiser une application nommee par exemple `CineMap`.
 
 Cette application permet de gerer des lieux de tournage associes a des films.
 
