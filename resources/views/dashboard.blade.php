@@ -5,13 +5,17 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    {{ __("You're logged in!") }}
-                </div>
+    <div class="page">
+        <section class="panel stack-sm">
+            <div>
+                <h3 class="section-title">Administration du blog</h3>
+                <p class="section-text">Accedez a la gestion des articles et des categories depuis cette page.</p>
             </div>
-        </div>
+
+            <div class="action-group">
+                <a class="button" href="{{ route('articles.index') }}">Gerer les articles</a>
+                <a class="button button-secondary" href="{{ route('categories.index') }}">Gerer les categories</a>
+            </div>
+        </section>
     </div>
 </x-app-layout>
