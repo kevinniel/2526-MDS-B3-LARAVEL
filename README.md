@@ -71,4 +71,4 @@ npm install
 composer run dev
 ```
 
-Si vous avez une erreur, rendez-vous dans le fichier `/resources/js/app.js` et supprimez la ligne `import './bootstrap';`
+Si vous avez une erreur, rendez-vous dans le fichier `/resources/js/app.js` et supprimez la ligne `import './bootstrap';` (dédicrasse à Fred : ne pas relancer breeze:install après 😇)
