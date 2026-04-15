@@ -4,7 +4,9 @@
 
 - **objet** : instance d'une classe
 - **attribut** : variable d'une classe
+- **propriétés** : Ensemble des attributs d'une classe
 - **méthode** : fonction d'une classe
+- **comportement** : Ensemble des méthodes d'une classe
 - **encapsulation** : Gestion de la visibilité des attributs et méthodes (public, private, protected)
     - public : accessible partout
     - private : accessible uniquement dans la classe
