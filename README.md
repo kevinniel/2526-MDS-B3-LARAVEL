@@ -73,6 +73,53 @@ composer run dev
 
 Si vous avez une erreur, rendez-vous dans le fichier `/resources/js/app.js` et supprimez la ligne `import './bootstrap';` (dédicrasse à Fred : ne pas relancer breeze:install après 😇)
 
+# Les couches
+
+## Routeur
+
+Il **route** la requête vers une méthode d'un contrôlleur par rapport au pattern de l'URL de la requête.
+
+## Controlleur
+
+Il contient la logique métier, il appelle les modèles, et renvoie une vue (ou un JSON si API par exemple).
+
+## Modèle
+
+Il est construit sur l'ORM utilisé. C'est lui qui permettra d'interagir avec la base de données.
+
+## ORM Object Relational Mapping
+
+C'est le mécanisme de gestion de la base de données, qui se base sur plusieurs éléments : 
+
+- les **modèles** : cf avant.
+- les **migrations** : permettent de contrôler la gestion de la structure de la base de données
+- les **seeders** : permettent d'injecter des données en BDD.
+
+## Les Factories
+
+Ils permettent de définir la manière de créer des modèles, souvent à partir de données fictives (pour l'utilisation des seeders).
+
+## Les vues
+
+Elles sont gérées grâce au Moteur de Template (Blade ici).
+
+## Les Middlewares
+
+Ce sont des services spécifiques injectables dans n'importe quelle couche.
+
+## Les Queues
+
+Ce sont des files d'attente utiles lorsqu'il y a de nombreuses actions à mener.
+
+## Les Jobs
+
+Ce sont des travaux à l'exécution souvent déportées dans le temps.
+
+
+
+
+
+
 # Workflow ressource
 
 ## 1. Migration
