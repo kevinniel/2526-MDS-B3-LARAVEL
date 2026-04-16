@@ -73,6 +73,16 @@ composer run dev
 
 Si vous avez une erreur, rendez-vous dans le fichier `/resources/js/app.js` et supprimez la ligne `import './bootstrap';` (dédicrasse à Fred : ne pas relancer breeze:install après 😇)
 
+# Les utilitaires
+
+## Composer
+
+C'est le gestionnaire de dépendances de laravel. Il les met toutes dans `/vendor`.
+
+## Artisan
+
+C'est un utilitaire PHP créé pour Laravel qui permet d'éxécuter un ensemble d'actions pour accélérer le développemtn d'applications.
+
 # Les couches
 
 ## Routeur
